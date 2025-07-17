@@ -77,7 +77,7 @@ export function PopularTopics() {
           <p className="text-purple-600 font-semibold mb-2">コース一覧</p>
           <h2 className="text-3xl font-bold text-gray-900">人気の学習トピック</h2>
           <p className="text-gray-600 max-w-2xl mx-auto mt-4">
-            お客様のニーズに合わせた多様なコースをご用意しております。
+            お客様のニーズに合わせた多様なコースをご用意しております
           </p>
         </div>
 
@@ -97,12 +97,12 @@ export function PopularTopics() {
                     </li>
                   ))}
                 </ul>
-                <Button
+                {/* <Button
                   variant="outline"
                   className="text-purple-600 border-purple-600 hover:bg-purple-50 bg-transparent"
                 >
                   詳細を見る →
-                </Button>
+                </Button> */}
               </CardContent>
             </Card>
           ))}

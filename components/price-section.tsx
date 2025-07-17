@@ -81,7 +81,7 @@ export function PriceSection() {
           <p className="text-purple-600 font-semibold mb-2">料金プラン</p>
           <h2 className="text-3xl font-bold text-gray-900">コース料金一覧</h2>
           <p className="text-gray-600 max-w-2xl mx-auto mt-4">
-            お客様の学習スタイルに合わせた柔軟な料金プランをご用意しております。
+            お客様の学習スタイルに合わせた柔軟な料金プランをご用意しております
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export function PriceSection() {
                 <span role="img" aria-label="person emoji" className="mr-2">
                   👤
                 </span>{" "}
-                1V1 (1コア=45分)
+                一対一 (1-on-1 Lesson)
               </CardTitle>
             </CardHeader>
             <CardContent>
