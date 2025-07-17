@@ -57,20 +57,20 @@ const groupPrices = [
 ]
 
 const studyAbroadJapanesePrices = [
-  { level: "0-N1", time: "310小时", price: "57600元", unitPrice: "189元" },
-  { level: "", time: "210小时", price: "48000元", unitPrice: "228元" },
-  { level: "", time: "160小时", price: "39800元", unitPrice: "248元" },
-  { level: "", time: "110小时", price: "29600元", unitPrice: "269元" },
-  { level: "", time: "60小时", price: "16800元", unitPrice: "280元" },
-  { level: "", time: "30小时", price: "8800元", unitPrice: "293元" },
+  { level: "0-N1", time: "310小时", price: "57600元", unitPrice: "189元", showLevel: true },
+  { level: "0-N1", time: "210小时", price: "48000元", unitPrice: "228元", showLevel: false },
+  { level: "0-N1", time: "160小时", price: "39800元", unitPrice: "248元", showLevel: false },
+  { level: "0-N1", time: "110小时", price: "29600元", unitPrice: "269元", showLevel: false },
+  { level: "0-N1", time: "60小时", price: "16800元", unitPrice: "280元", showLevel: false },
+  { level: "0-N1", time: "30小时", price: "8800元", unitPrice: "293元", showLevel: false },
 ]
 
 const examPreparationPrices = [
-  { level: "0-N1", time: "75小时", price: "24900元", unitPrice: "332元" },
-  { level: "0-N2", time: "60小时", price: "19880元", unitPrice: "331元" },
-  { level: "0-N3", time: "45小时", price: "14860元", unitPrice: "330元" },
-  { level: "0-N4", time: "30小时", price: "9800元", unitPrice: "326元" },
-  { level: "0-N5", time: "30小时", price: "9600元", unitPrice: "320元" },
+  { level: "0-N1", time: "75小时", price: "24900元", unitPrice: "332元", showLevel: true },
+  { level: "0-N2", time: "60小时", price: "19880元", unitPrice: "331元", showLevel: true },
+  { level: "0-N3", time: "45小时", price: "14860元", unitPrice: "330元", showLevel: true },
+  { level: "0-N4", time: "30小时", price: "9800元", unitPrice: "326元", showLevel: true },
+  { level: "0-N5", time: "30小时", price: "9600元", unitPrice: "320元", showLevel: true },
 ]
 
 export function PriceSection() {
@@ -91,70 +91,74 @@ export function PriceSection() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Chinese Teaching 1V1 Course Price Table */}
-          <Card className="bg-white shadow-lg border border-gray-200">
-            <CardHeader className="bg-gray-50 border-b border-gray-200 py-4">
-              <CardTitle className="text-center">
-                <span role="img" aria-label="person emoji" className="mr-2">
+          <Card className="bg-white shadow-xl border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <CardHeader className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-4 md:py-6">
+              <CardTitle className="text-center text-sm md:text-lg font-bold">
+                <span role="img" aria-label="person emoji" className="mr-2 md:mr-3 text-lg md:text-2xl">
                   👤
-                </span>{" "}
+                </span>
                 一対一 (1-on-1 Lesson)
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-0">
               <div className="overflow-x-auto">
-                <Table className="min-w-full divide-y divide-gray-200">
-                  <TableHeader className="bg-gray-100">
-                    <TableRow>
+                <Table className="min-w-full">
+                  <TableHeader className="bg-gradient-to-r from-purple-50 to-pink-50">
+                    <TableRow className="border-none">
                       <TableHead
                         rowSpan={2}
-                        className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[80px] text-center align-bottom whitespace-normal"
+                        className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-purple-700 w-[80px] md:w-[120px] align-bottom border-r border-purple-200"
                       >
-                        コマ数
+                        <div>コマ数</div>
+                        <div className="text-xs text-purple-500 font-normal">* 45分</div>
                       </TableHead>
                       <TableHead
                         colSpan={2}
-                        className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center whitespace-normal"
+                        className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-purple-700 border-r border-purple-200"
                       >
                         スタンダード
                       </TableHead>
                       <TableHead
                         colSpan={2}
-                        className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center whitespace-normal"
+                        className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-purple-700"
                       >
                         平日
                       </TableHead>
                     </TableRow>
-                    <TableRow>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
+                    <TableRow className="border-none">
+                      <TableHead className="px-1 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-purple-600 border-r border-purple-200">
                         初中级
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
+                      <TableHead className="px-1 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-purple-600 border-r border-purple-200">
                         高级
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
+                      <TableHead className="px-1 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-purple-600 border-r border-purple-200">
                         初中级
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
+                      <TableHead className="px-1 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-purple-600">
                         高级
                       </TableHead>
                     </TableRow>
                   </TableHeader>
-                  <TableBody className="bg-white divide-y divide-gray-200">
+                  <TableBody className="bg-white">
                     {oneOnOnePrices.map((row, index) => (
-                      <TableRow key={index} className="hover:bg-gray-50">
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 font-medium text-center whitespace-normal">
+                      <TableRow 
+                        key={index} 
+                        className="hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 border-b border-gray-100 last:border-none"
+                      >
+                        <TableCell className="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-800 font-bold text-center border-r border-gray-100">
                           {row.lessons}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-1 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold border-r border-gray-100">
                           {row.standardBeginnerIntermediate}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-1 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold border-r border-gray-100">
                           {row.standardAdvanced}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-1 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold border-r border-gray-100">
                           {row.weekdayBeginnerIntermediate}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-1 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold">
                           {row.weekdayAdvanced}
                         </TableCell>
                       </TableRow>
@@ -166,70 +170,74 @@ export function PriceSection() {
           </Card>
 
           {/* Chinese Teaching Pair Course Price Table */}
-          <Card className="bg-white shadow-lg border border-gray-200">
-            <CardHeader className="bg-gray-50 border-b border-gray-200 py-4">
-              <CardTitle className="text-center">
-                <span role="img" aria-label="two people emoji" className="mr-2">
+          <Card className="bg-white shadow-xl border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <CardHeader className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-4 md:py-6">
+              <CardTitle className="text-center text-sm md:text-lg font-bold">
+                <span role="img" aria-label="two people emoji" className="mr-2 md:mr-3 text-lg md:text-2xl">
                   👥
-                </span>{" "}
+                </span>
                 ペア (Pair Lesson)
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-0">
               <div className="overflow-x-auto">
-                <Table className="min-w-full divide-y divide-gray-200">
-                  <TableHeader className="bg-gray-100">
-                    <TableRow>
+                <Table className="min-w-full">
+                  <TableHeader className="bg-gradient-to-r from-blue-50 to-cyan-50">
+                    <TableRow className="border-none">
                       <TableHead
                         rowSpan={2}
-                        className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[80px] text-center align-bottom whitespace-normal"
+                        className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-blue-700 w-[80px] md:w-[120px] align-bottom border-r border-blue-200"
                       >
-                        コマ数
+                        <div>コマ数</div>
+                        <div className="text-xs text-blue-500 font-normal">* 45分</div>
                       </TableHead>
                       <TableHead
                         colSpan={2}
-                        className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center whitespace-normal"
+                        className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-blue-700 border-r border-blue-200"
                       >
                         スタンダード
                       </TableHead>
                       <TableHead
                         colSpan={2}
-                        className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center whitespace-normal"
+                        className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-blue-700"
                       >
                         平日
                       </TableHead>
                     </TableRow>
-                    <TableRow>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
+                    <TableRow className="border-none">
+                      <TableHead className="px-1 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-blue-600 border-r border-blue-200">
                         初中级
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
+                      <TableHead className="px-1 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-blue-600 border-r border-blue-200">
                         高级
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
+                      <TableHead className="px-1 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-blue-600 border-r border-blue-200">
                         初中级
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
+                      <TableHead className="px-1 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-blue-600">
                         高级
                       </TableHead>
                     </TableRow>
                   </TableHeader>
-                  <TableBody className="bg-white divide-y divide-gray-200">
+                  <TableBody className="bg-white">
                     {groupPrices.map((row, index) => (
-                      <TableRow key={index} className="hover:bg-gray-50">
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 font-medium text-center whitespace-normal">
+                      <TableRow 
+                        key={index} 
+                        className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-200 border-b border-gray-100 last:border-none"
+                      >
+                        <TableCell className="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-800 font-bold text-center border-r border-gray-100">
                           {row.lessons}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-1 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold border-r border-gray-100">
                           {row.standardBeginnerIntermediate}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-1 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold border-r border-gray-100">
                           {row.standardAdvanced}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-1 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold border-r border-gray-100">
                           {row.weekdayBeginnerIntermediate}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-1 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold">
                           {row.weekdayAdvanced}
                         </TableCell>
                       </TableRow>
@@ -247,45 +255,55 @@ export function PriceSection() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Study Abroad Japanese Course Table */}
-          <Card className="bg-white shadow-lg border border-gray-200">
-            <CardHeader className="bg-gray-50 border-b border-gray-200 py-4">
-              <CardTitle className="text-center">
-                <span role="img" aria-label="airplane emoji" className="mr-2">
+          <Card className="bg-white shadow-xl border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <CardHeader className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-4 md:py-6">
+              <CardTitle className="text-center text-sm md:text-lg font-bold">
+                <span role="img" aria-label="airplane emoji" className="mr-2 md:mr-3 text-lg md:text-2xl">
                   ✈️
-                </span>{" "}
+                </span>
                 留学日语课程教学 (1对1)
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-0">
               <div className="overflow-x-auto">
-                <Table className="min-w-full divide-y divide-gray-200">
-                  <TableHeader className="bg-gray-100">
-                    <TableRow>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-normal">
+                <Table className="min-w-full">
+                                    <TableHeader className="bg-gradient-to-r from-orange-50 to-red-50">
+                    <TableRow className="border-none">
+                      <TableHead className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-orange-700 border-r border-orange-200">
                         等级
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-normal">
+                      <TableHead className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-orange-700 border-r border-orange-200">
                         时间
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
+                      <TableHead className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-orange-700 border-r border-orange-200">
                         価格
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
+                      <TableHead className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-orange-700">
                         単価
                       </TableHead>
                     </TableRow>
                   </TableHeader>
-                  <TableBody className="bg-white divide-y divide-gray-200">
+                  <TableBody className="bg-white">
                     {studyAbroadJapanesePrices.map((row, index) => (
-                      <TableRow key={index} className="hover:bg-gray-50">
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 font-medium whitespace-normal">
-                          {row.level}
+                      <TableRow 
+                        key={index} 
+                        className="hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-200 border-b border-gray-100 last:border-none"
+                      >
+                        {row.showLevel && (
+                          <TableCell 
+                            rowSpan={6}
+                            className="px-2 md:px-6 py-4 md:py-6 text-xs md:text-sm text-white font-bold text-center align-middle bg-gradient-to-b from-orange-500 to-red-500 border-r border-orange-300"
+                          >
+                            {row.level}
+                          </TableCell>
+                        )}
+                        <TableCell className="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold border-r border-gray-100">
+                          {row.time}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 whitespace-normal">{row.time}</TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold border-r border-gray-100">
                           {row.price}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold">
                           {row.unitPrice}
                         </TableCell>
                       </TableRow>
@@ -297,45 +315,50 @@ export function PriceSection() {
           </Card>
 
           {/* Exam Preparation Guidance Course Table */}
-          <Card className="bg-white shadow-lg border border-gray-200">
-            <CardHeader className="bg-gray-50 border-b border-gray-200 py-4">
-              <CardTitle className="text-center">
-                <span role="img" aria-label="book emoji" className="mr-2">
+          <Card className="bg-white shadow-xl border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <CardHeader className="bg-gradient-to-r from-green-500 to-teal-500 text-white py-4 md:py-6">
+              <CardTitle className="text-center text-sm md:text-lg font-bold">
+                <span role="img" aria-label="book emoji" className="mr-2 md:mr-3 text-lg md:text-2xl">
                   📚
-                </span>{" "}
+                </span>
                 考级辅导课程 (1对1)
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-0">
               <div className="overflow-x-auto">
-                <Table className="min-w-full divide-y divide-gray-200">
-                  <TableHeader className="bg-gray-100">
-                    <TableRow>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-normal">
+                <Table className="min-w-full">
+                  <TableHeader className="bg-gradient-to-r from-green-50 to-teal-50">
+                    <TableRow className="border-none">
+                      <TableHead className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-green-700 border-r border-green-200">
                         等级
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-normal">
+                      <TableHead className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-green-700 border-r border-green-200">
                         时间
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
+                      <TableHead className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-green-700 border-r border-green-200">
                         価格
                       </TableHead>
-                      <TableHead className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-right whitespace-normal">
-                        単価
+                      <TableHead className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-green-700">
+                        単价
                       </TableHead>
                     </TableRow>
                   </TableHeader>
-                  <TableBody className="bg-white divide-y divide-gray-200">
+                  <TableBody className="bg-white">
                     {examPreparationPrices.map((row, index) => (
-                      <TableRow key={index} className="hover:bg-gray-50">
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 font-medium whitespace-normal">
+                      <TableRow 
+                        key={index} 
+                        className="hover:bg-gradient-to-r hover:from-green-50 hover:to-teal-50 transition-all duration-200 border-b border-gray-100 last:border-none"
+                      >
+                        <TableCell className="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-800 font-bold text-center border-r border-gray-100">
                           {row.level}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 whitespace-normal">{row.time}</TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold border-r border-gray-100">
+                          {row.time}
+                        </TableCell>
+                        <TableCell className="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold border-r border-gray-100">
                           {row.price}
                         </TableCell>
-                        <TableCell className="px-4 py-4 text-sm text-gray-700 text-right whitespace-normal">
+                        <TableCell className="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm text-gray-700 text-center font-semibold">
                           {row.unitPrice}
                         </TableCell>
                       </TableRow>

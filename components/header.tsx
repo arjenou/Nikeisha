@@ -8,7 +8,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <div className="bg-purple-600 text-white px-3 py-1 rounded-lg font-bold text-lg">NKS</div>
+            <a href="#home" className="bg-purple-600 text-white px-3 py-1 rounded-lg font-bold text-lg hover:bg-purple-700 transition-colors cursor-pointer">NKS</a>
           </div>
 
           {/* Desktop Navigation */}

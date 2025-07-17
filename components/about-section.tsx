@@ -48,7 +48,7 @@ export function AboutSection() {
               </div>
             </div>
 
-            <Button className="bg-purple-600 hover:bg-purple-700">Know About Us →</Button>
+            {/* <Button className="bg-purple-600 hover:bg-purple-700">Know About Us →</Button> */}
           </div>
         </div>
       </div>

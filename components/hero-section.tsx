@@ -14,7 +14,9 @@ export function HeroSection() {
               2008年上海設立、日本人専門教育を大学的内容にて各高度中国語教育、
               中日語業務対、経営スタイル自由的時、入会金なし、いつでもスタート可能！
             </p>
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3">お問い合わせ →</Button>
+            <Button asChild className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3">
+              <a href="#contact">お問い合わせ →</a>
+            </Button>
           </div>
 
           <div className="relative">

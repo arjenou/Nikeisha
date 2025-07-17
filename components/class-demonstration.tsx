@@ -13,7 +13,7 @@ const classImages = [
     alt: "一对一辅导课程",
   },
   {
-    src: "/images/class-demo-3.jpg",
+    src: "/images/class-demo-7.jpg",
     alt: "师生互动学习",
   },
   {
