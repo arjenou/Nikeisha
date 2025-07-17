@@ -1,102 +1,108 @@
 import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { GraduationCap, BookOpen, Globe, Plane } from "lucide-react"
 
 export const courseCategories = [
   {
-    title: "中国语コース",
-    titleEn: "Chinese Courses",
-    icon: "🇨🇳",
+    title: "中国語コース",
+    titleEn: "Chinese Course",
+    description: "初心者から上級者まで、体系的な中国語学習を提供します。",
+    icon: BookOpen,
     courses: [
-      "基礎日常会話（初級、中級、上級）",
-      "ビジネス会話（初級、中級、上級）",
-      "リスニング・スピーキング会話（初級、中級、上級）",
-      "中国赴任準備",
-      "中国語検定対策（HSK、HSKK、BCT、YCT、中国語検定）",
-      "上海語",
-      "在日華人国語（人民教育出版社教材、中国と同期）",
-      "標準中国語（小・中・高校生）",
-      "中国語視聴覚",
-      "ピンインと四声",
-      "留学生コース（中国留学希望者向け）",
+      "中国語入門",
+      "HSK対策",
+      "ビジネス中国語",
+      "日常会話",
+      "中国語発音矯正",
+      "中国文化理解",
+      "中国語検定対策",
+      "中国語作文",
     ],
-    color: "bg-red-50 border-red-200",
-    iconBg: "bg-red-100",
-    textColor: "text-red-600",
   },
   {
-    title: "日语コース",
-    titleEn: "Japanese Courses",
-    icon: "🇯🇵",
+    title: "日本語コース",
+    titleEn: "Japanese Course",
+    description: "日本での生活やビジネスに役立つ実践的な日本語を学びます。",
+    icon: Globe,
     courses: [
-      "日语会话（初、中、高）",
-      "商务会话（初、中、高）",
-      "JLPT日语对策",
-      "EJU日语对策",
-      "JETST日语对策",
-      "NAT日语对策",
+      "日本語入門",
+      "JLPT対策 (N1-N5)",
+      "ビジネス日本語",
+      "日常会話",
+      "日本語発音矯正",
+      "日本文化理解",
+      "日本語検定対策",
+      "日本語作文",
     ],
-    color: "bg-blue-50 border-blue-200",
-    iconBg: "bg-blue-100",
-    textColor: "text-blue-600",
   },
   {
-    title: "英语コース",
-    titleEn: "English Courses",
-    icon: "🇺🇸",
-    courses: ["日常会话（初级、中级、高级）", "商务会话（初级、中级、高级）", "英检（5-1级）", "ことも向け英会話"],
-    color: "bg-green-50 border-green-200",
-    iconBg: "bg-green-100",
-    textColor: "text-green-600",
+    title: "英語コース",
+    titleEn: "English Course",
+    description: "グローバルなコミュニケーション能力を向上させるための英語学習。",
+    icon: GraduationCap,
+    courses: [
+      "英会話初級",
+      "TOEFL/IELTS対策",
+      "ビジネス英語",
+      "旅行英会話",
+      "英文法強化",
+      "英語プレゼンテーション",
+      "英語ディスカッション",
+      "英語面接対策",
+    ],
   },
   {
-    title: "留学コース",
-    titleEn: "Study Abroad",
-    icon: "✈️",
-    courses: ["可以办理到中国上海、北京、西安等的全国大学留学"],
-    color: "bg-purple-50 border-purple-200",
-    iconBg: "bg-purple-100",
-    textColor: "text-purple-600",
+    title: "留学サポート",
+    titleEn: "Study Abroad Support",
+    description: "中国や日本への留学を全面的にサポートします。",
+    icon: Plane,
+    courses: [
+      "留学カウンセリング",
+      "ビザ申請サポート",
+      "学校選び",
+      "出願書類作成",
+      "現地生活オリエンテーション",
+      "奨学金情報",
+      "留学中のサポート",
+      "帰国後のキャリア相談",
+    ],
   },
 ]
 
 export function PopularTopics() {
   return (
-    <section className="py-20 bg-white">
+    <section id="course" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">コース一覧</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            基礎から上級まで、さまざまな学習ニーズに応える専門的な語学教育コース
+        <div className="text-center mb-12">
+          <p className="text-purple-600 font-semibold mb-2">コース一覧</p>
+          <h2 className="text-3xl font-bold text-gray-900">人気の学習トピック</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mt-4">
+            お客様のニーズに合わせた多様なコースをご用意しております。
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {courseCategories.map((category, index) => (
-            <Card
-              key={index}
-              className={`hover:shadow-xl transition-all duration-300 border-2 ${category.color} group hover:scale-105 rounded-3xl`}
-            >
-              <CardContent className="p-8">
-                <h3 className="font-bold text-2xl mb-6 text-gray-900">{category.title}</h3>
-
-                <div className="grid grid-cols-2 gap-y-4 gap-x-8 text-gray-700 text-sm">
-                  {category.courses.map((course, courseIndex) => {
-                    // Split the course string at the first opening parenthesis for line break
-                    const parts = course.split("（", 2)
-                    return (
-                      <div key={courseIndex} className="text-center">
-                        {" "}
-                        {/* Added text-center here */}
-                        {parts[0]}
-                        {parts.length > 1 && (
-                          <>
-                            <br />
-                            {"（" + parts[1]}
-                          </>
-                        )}
-                      </div>
-                    )
-                  })}
+            <Card key={index} className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 flex flex-col items-center text-center">
+                <div className="bg-purple-100 rounded-full p-3 mb-4">
+                  <category.icon className="h-8 w-8 text-purple-600" />
                 </div>
+                <h3 className="font-bold text-lg mb-2">{category.title}</h3>
+                <p className="text-gray-600 text-sm mb-4 flex-grow">{category.description}</p>
+                <ul className="text-gray-700 text-sm space-y-1 mb-4 w-full">
+                  {category.courses.map((course, idx) => (
+                    <li key={idx} className="flex items-center justify-center text-center">
+                      <span className="text-center">{course}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  variant="outline"
+                  className="text-purple-600 border-purple-600 hover:bg-purple-50 bg-transparent"
+                >
+                  詳細を見る →
+                </Button>
               </CardContent>
             </Card>
           ))}

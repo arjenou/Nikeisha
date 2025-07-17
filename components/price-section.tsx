@@ -75,7 +75,7 @@ const examPreparationPrices = [
 
 export function PriceSection() {
   return (
-    <section className="py-16 bg-gradient-to-br from-purple-50 to-blue-50">
+    <section id="price" className="py-16 bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="text-purple-600 font-semibold mb-2">料金プラン</p>

@@ -13,37 +13,42 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#" className="text-gray-700 hover:text-purple-600">
+            <a href="#home" className="text-gray-700 hover:text-purple-600">
               Home
             </a>
             <div className="flex items-center space-x-1">
-              <a href="#" className="text-gray-700 hover:text-purple-600">
+              <a href="#about" className="text-gray-700 hover:text-purple-600">
                 About
               </a>
             </div>
             <div className="flex items-center space-x-1">
-              <a href="#" className="text-gray-700 hover:text-purple-600">
+              <a href="#course" className="text-gray-700 hover:text-purple-600">
                 Course
               </a>
             </div>
             <div className="flex items-center space-x-1">
-              <a href="#" className="text-gray-700 hover:text-purple-600">
+              <a href="#class" className="text-gray-700 hover:text-purple-600">
                 Class
               </a>
             </div>
             <div className="flex items-center space-x-1">
-              <a href="#" className="text-gray-700 hover:text-purple-600">
+              <a href="#textbook" className="text-gray-700 hover:text-purple-600">
                 Textbook
               </a>
             </div>
             <div className="flex items-center space-x-1">
-              <a href="#" className="text-gray-700 hover:text-purple-600">
+              <a href="#news" className="text-gray-700 hover:text-purple-600">
                 News
               </a>
             </div>
             <div className="flex items-center space-x-1">
-              <a href="#" className="text-gray-700 hover:text-purple-600">
+              <a href="#price" className="text-gray-700 hover:text-purple-600">
                 Price
+              </a>
+            </div>
+            <div className="flex items-center space-x-1">
+              <a href="#contact" className="text-gray-700 hover:text-purple-600">
+                お問い合わせ
               </a>
             </div>
           </nav>
@@ -59,26 +64,29 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right">
                 <div className="flex flex-col gap-4 py-6">
-                  <a href="#" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
+                  <a href="#home" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
                     Home
                   </a>
-                  <a href="#" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
+                  <a href="#about" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
                     About
                   </a>
-                  <a href="#" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
+                  <a href="#course" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
                     Course
                   </a>
-                  <a href="#" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
+                  <a href="#class" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
                     Class
                   </a>
-                  <a href="#" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
+                  <a href="#textbook" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
                     Textbook
                   </a>
-                  <a href="#" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
+                  <a href="#news" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
                     News
                   </a>
-                  <a href="#" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
+                  <a href="#price" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
                     Price
+                  </a>
+                  <a href="#contact" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
+                    お問い合わせ
                   </a>
                 </div>
               </SheetContent>

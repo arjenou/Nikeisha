@@ -18,7 +18,7 @@ export function ContactForm() {
   const subCourses = selectedCategory ? selectedCategory.courses : []
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section id="contact" className="py-16 bg-gray-50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="text-purple-600 font-semibold mb-2">お問い合わせ</p>
