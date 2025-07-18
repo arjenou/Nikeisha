@@ -35,10 +35,17 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
 
   // Send email using Resend
   try {
+    // 检查API密钥是否配置
+    if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 'your_resend_api_key_here') {
+      console.error('RESEND_API_KEY is not properly configured')
+      return { success: false, message: 'メール送信の設定に問題があります。管理者にお問い合わせください。' }
+    }
+
+    console.log('Sending admin email...')
     // 发送给管理员的邮件（原有功能）
-    await resend.emails.send({
+    const adminEmailResult = await resend.emails.send({
       from: 'onboarding@resend.dev', // Resend验证的发送域名
-      to: 'zhengppp691@gmail.com', // 管理员邮箱
+      to: 'wangyunjie1101@gmail.com', // 管理员邮箱
       replyTo: email as string, // 回复时会自动发送给填表人
       subject: `新しいお問い合わせフォームの送信 - ${name} 様より`,
       html: `
@@ -74,9 +81,11 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
         </div>
       `,
     })
+    console.log('Admin email sent successfully:', adminEmailResult.data?.id)
 
+    console.log('Sending user confirmation email...')
     // 发送给用户的确认邮件
-    await resend.emails.send({
+    const userEmailResult = await resend.emails.send({
       from: 'onboarding@resend.dev', // Resend验证的发送域名
       to: email as string, // 发送给表单填写者
       subject: 'お問い合わせありがとうございます - 二継社',
@@ -114,6 +123,7 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
         </div>
       `,
     })
+    console.log('User confirmation email sent successfully:', userEmailResult.data?.id)
     
     console.log('Email sent successfully!')
     return { success: true, message: 'お問い合わせが正常に送信されました。ありがとうございます！' }
