@@ -39,17 +39,19 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
     await resend.emails.send({
       from: 'onboarding@resend.dev', // Resend验证的发送域名
       to: process.env.CONTACT_EMAIL || 'zhengppp691@gmail.com', // 管理员邮箱
-      subject: '新しいお問い合わせフォームの送信 - NKS教育',
+      replyTo: email as string, // 回复时会自动发送给填表人
+      subject: `新しいお問い合わせフォームの送信 - ${name} 様より`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <h2 style="color: #9333ea; border-bottom: 2px solid #9333ea; padding-bottom: 10px;">
-            新しいお問い合わせ
+            新しいお問い合わせ - ${name} 様より
           </h2>
           
           <div style="background-color: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #374151; margin-top: 0;">お客様情報</h3>
             <p><strong>お名前:</strong> ${name}</p>
             <p><strong>メールアドレス:</strong> ${email}</p>
+            <p style="color: #059669; font-size: 14px;"><em>※ このメールに返信すると、お客様に直接返信されます</em></p>
           </div>
           
           <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
