@@ -38,7 +38,7 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
     // 发送给管理员的邮件（原有功能）
     await resend.emails.send({
       from: 'onboarding@resend.dev', // Resend验证的发送域名
-      to: process.env.CONTACT_EMAIL || 'zhengppp691@gmail.com', // 管理员邮箱
+      to: 'zhengppp691@gmail.com', // 管理员邮箱
       replyTo: email as string, // 回复时会自动发送给填表人
       subject: `新しいお問い合わせフォームの送信 - ${name} 様より`,
       html: `
