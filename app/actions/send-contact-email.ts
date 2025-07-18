@@ -68,7 +68,7 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
           ` : ''}
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
-            <p>このメールはNKS教育のお問い合わせフォームから送信されました。</p>
+            <p>このメールは二継社のお問い合わせフォームから送信されました。</p>
             <p>送信日時: ${new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}</p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
     await resend.emails.send({
       from: 'onboarding@resend.dev', // Resend验证的发送域名
       to: email as string, // 发送给表单填写者
-      subject: 'お問い合わせありがとうございます - NKS教育',
+      subject: 'お問い合わせありがとうございます - 二継社',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <h2 style="color: #9333ea; border-bottom: 2px solid #9333ea; padding-bottom: 10px;">
@@ -91,7 +91,7 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
           </p>
           
           <p style="color: #374151; line-height: 1.6;">
-            この度は、NKS教育にお問い合わせいただき、誠にありがとうございます。<br>
+            この度は、二継社にお問い合わせいただき、誠にありがとうございます。<br>
             以下の内容でお問い合わせを承りました。
           </p>
           
@@ -107,15 +107,8 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
             通常、1-2営業日以内にご返信いたします。
           </p>
           
-          <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <p style="color: #0277bd; margin: 0; font-weight: bold;">
-              📞 お急ぎの場合は直接お電話ください<br>
-              TEL: XXX-XXXX-XXXX (平日 9:00-18:00)
-            </p>
-          </div>
-          
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
-            <p>NKS教育</p>
+            <p>二継社</p>
             <p>この自動配信メールに返信しないでください。</p>
           </div>
         </div>
