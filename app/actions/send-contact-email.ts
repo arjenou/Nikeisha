@@ -44,7 +44,7 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
     console.log('Sending admin email...')
     // 发送给管理员的邮件（原有功能）
     const adminEmailResult = await resend.emails.send({
-      from: 'onboarding@resend.dev', // Resend验证的发送域名
+      from: 'no-reply@nikeisya.co.jp', // Resend验证的发送域名
       to: 'zhengppp691@gmail.com', // 管理员邮箱
       replyTo: email as string, // 回复时会自动发送给填表人
       subject: `新しいお問い合わせフォームの送信 - ${name} 様より`,
@@ -81,12 +81,20 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
         </div>
       `,
     })
-    console.log('Admin email sent successfully:', adminEmailResult.data?.id)
+    
+    console.log('Admin email response:', JSON.stringify(adminEmailResult, null, 2))
+    
+    if (adminEmailResult.data?.id) {
+      console.log('✅ Admin email sent successfully with ID:', adminEmailResult.data.id)
+    } else {
+      console.error('❌ Admin email failed - no ID returned')
+      console.error('Admin email error:', adminEmailResult.error)
+    }
 
     console.log('Sending user confirmation email...')
     // 发送给用户的确认邮件
     const userEmailResult = await resend.emails.send({
-      from: 'onboarding@resend.dev', // Resend验证的发送域名
+      from: 'no-reply@nikeisya.co.jp', // Resend验证的发送域名
       to: email as string, // 发送给表单填写者
       subject: 'お問い合わせありがとうございます - 二継社',
       html: `
@@ -112,7 +120,7 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
           </div>
           
           <p style="color: #374151; line-height: 1.6;">
-            担当者が内容を確認次第、メールまたはお電話にてご連絡いたします。<br>
+            担当者が内容を確認次第、メールにてご連絡いたします。<br>
             通常、1-2営業日以内にご返信いたします。
           </p>
           
@@ -123,10 +131,38 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
         </div>
       `,
     })
-    console.log('User confirmation email sent successfully:', userEmailResult.data?.id)
     
-    console.log('Email sent successfully!')
-    return { success: true, message: 'お問い合わせが正常に送信されました。ありがとうございます！' }
+    console.log('User email response:', JSON.stringify(userEmailResult, null, 2))
+    
+    if (userEmailResult.data?.id) {
+      console.log('✅ User confirmation email sent successfully with ID:', userEmailResult.data.id)
+    } else {
+      console.error('❌ User confirmation email failed - no ID returned')
+      console.error('User email error:', userEmailResult.error)
+    }
+    
+    // 检查两个邮件的发送状态
+    const adminSuccess = adminEmailResult.data?.id ? true : false
+    const userSuccess = userEmailResult.data?.id ? true : false
+    
+    console.log('=== EMAIL SENDING SUMMARY ===')
+    console.log(`Admin email (${adminEmailResult.data?.id || 'FAILED'}): ${adminSuccess ? '✅ SUCCESS' : '❌ FAILED'}`)
+    console.log(`User email (${userEmailResult.data?.id || 'FAILED'}): ${userSuccess ? '✅ SUCCESS' : '❌ FAILED'}`)
+    console.log('===============================')
+    
+    if (adminSuccess && userSuccess) {
+      console.log('🎉 Both emails sent successfully!')
+      return { success: true, message: 'お問い合わせが正常に送信されました。ありがとうございます！' }
+    } else if (userSuccess) {
+      console.log('⚠️ User email sent, but admin email failed')
+      return { success: true, message: 'お問い合わせを受信しました。管理者への通知に問題がありましたが、お客様への確認メールは送信されました。' }
+    } else if (adminSuccess) {
+      console.log('⚠️ Admin email sent, but user email failed')
+      return { success: true, message: 'お問い合わせを受信しました。確認メールの送信に問題がありましたが、管理者には通知されました。' }
+    } else {
+      console.log('❌ Both emails failed')
+      return { success: false, message: 'メールの送信に失敗しました。しばらくしてから再度お試しください。' }
+    }
   } catch (error) {
     console.error('Failed to send email:', error)
     return { success: false, message: 'メールの送信に失敗しました。しばらくしてから再度お試しください。' }
