@@ -35,9 +35,10 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
 
   // Send email using Resend
   try {
+    // 发送给管理员的邮件（原有功能）
     await resend.emails.send({
-      from: 'onboarding@resend.dev', // 使用Resend验证的发送域名
-      to: process.env.CONTACT_EMAIL || 'your-email@example.com', // 您想接收邮件的邮箱地址
+      from: 'onboarding@resend.dev', // Resend验证的发送域名
+      to: process.env.CONTACT_EMAIL || 'zhengppp691@gmail.com', // 管理员邮箱
       subject: '新しいお問い合わせフォームの送信 - NKS教育',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -67,6 +68,53 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
             <p>このメールはNKS教育のお問い合わせフォームから送信されました。</p>
             <p>送信日時: ${new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}</p>
+          </div>
+        </div>
+      `,
+    })
+
+    // 发送给用户的确认邮件
+    await resend.emails.send({
+      from: 'onboarding@resend.dev', // Resend验证的发送域名
+      to: email as string, // 发送给表单填写者
+      subject: 'お問い合わせありがとうございます - NKS教育',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #9333ea; border-bottom: 2px solid #9333ea; padding-bottom: 10px;">
+            お問い合わせありがとうございます
+          </h2>
+          
+          <p style="font-size: 16px; color: #374151; margin-bottom: 20px;">
+            ${name} 様
+          </p>
+          
+          <p style="color: #374151; line-height: 1.6;">
+            この度は、NKS教育にお問い合わせいただき、誠にありがとうございます。<br>
+            以下の内容でお問い合わせを承りました。
+          </p>
+          
+          <div style="background-color: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #374151; margin-top: 0;">お問い合わせ内容</h3>
+            <p><strong>選択コース:</strong> ${course}</p>
+            ${subCourse ? `<p><strong>詳細コース:</strong> ${subCourse}</p>` : ''}
+            ${memo ? `<p><strong>メッセージ:</strong></p><p style="white-space: pre-wrap;">${memo}</p>` : ''}
+          </div>
+          
+          <p style="color: #374151; line-height: 1.6;">
+            担当者が内容を確認次第、メールまたはお電話にてご連絡いたします。<br>
+            通常、1-2営業日以内にご返信いたします。
+          </p>
+          
+          <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
+            <p style="color: #0277bd; margin: 0; font-weight: bold;">
+              📞 お急ぎの場合は直接お電話ください<br>
+              TEL: XXX-XXXX-XXXX (平日 9:00-18:00)
+            </p>
+          </div>
+          
+          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
+            <p>NKS教育</p>
+            <p>この自動配信メールに返信しないでください。</p>
           </div>
         </div>
       `,
