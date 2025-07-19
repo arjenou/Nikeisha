@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Nikisya - NKS语言教育',
+  title: '二継社 - NKS语言教育',
   description: 'NKS语言教育 - 专业的中文和日语教学服务',
   generator: 'Next.js',
   icons: {
