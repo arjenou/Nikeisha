@@ -6,7 +6,7 @@ export const courseCategories = [
   {
     title: "中国語コース",
     titleEn: "Chinese Course",
-    description: "初心者から上級者まで、体系的な中国語学習を提供します。",
+    description: "初心者から上級者まで、体系的な中国語学習を提供します",
     icon: BookOpen,
     courses: [
       "中国語入門",
@@ -22,23 +22,24 @@ export const courseCategories = [
   {
     title: "日本語コース",
     titleEn: "Japanese Course",
-    description: "日本での生活やビジネスに役立つ実践的な日本語を学びます。",
+    description: "日本大学/大学院升学指导和商务日语",
     icon: Globe,
     courses: [
-      "日本語入門",
-      "JLPT対策 (N1-N5)",
-      "ビジネス日本語",
-      "日常会話",
-      "日本語発音矯正",
+      "日本学部文科理科升学辅导",
+      "日本大学院文科理科升学辅导",
+      "JLPT能力考试对策（N1-N5）",
+      "日语入门",
+      "商务日语",
+      "日常会话",
+      "日语发音矫正",
       "日本文化理解",
-      "日本語検定対策",
-      "日本語作文",
+      "日语能力考试对策",
     ],
   },
   {
     title: "英語コース",
     titleEn: "English Course",
-    description: "グローバルなコミュニケーション能力を向上させるための英語学習。",
+    description: "グローバルなコミュニケーション能力を向上させるための英語学習",
     icon: GraduationCap,
     courses: [
       "英会話初級",
@@ -54,7 +55,7 @@ export const courseCategories = [
   {
     title: "留学サポート",
     titleEn: "Study Abroad Support",
-    description: "中国や日本への留学を全面的にサポートします。",
+    description: "中国や日本への留学を全面的にサポートします",
     icon: Plane,
     courses: [
       "留学カウンセリング",

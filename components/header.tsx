@@ -27,8 +27,8 @@ export function Header() {
               </a>
             </div>
             <div className="flex items-center space-x-1">
-              <a href="#class" className="text-gray-700 hover:text-purple-600">
-                Class
+              <a href="#price" className="text-gray-700 hover:text-purple-600">
+                Price
               </a>
             </div>
             <div className="flex items-center space-x-1">
@@ -39,11 +39,6 @@ export function Header() {
             <div className="flex items-center space-x-1">
               <a href="#news" className="text-gray-700 hover:text-purple-600">
                 News
-              </a>
-            </div>
-            <div className="flex items-center space-x-1">
-              <a href="#price" className="text-gray-700 hover:text-purple-600">
-                Price
               </a>
             </div>
             <div className="flex items-center space-x-1">

@@ -121,7 +121,7 @@ export function ClassDemonstration() {
     <section id="class" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">クラス体験</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">中国語クラス体験</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">リアルな授業風景、専門的な学習環境、個別対応の学習体験</p>
         </div>
 
