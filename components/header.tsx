@@ -16,40 +16,48 @@ export function Header() {
             <a href="#home" className="text-gray-700 hover:text-purple-600">
               Home
             </a>
-            <div className="flex items-center space-x-1">
-              <a href="#about" className="text-gray-700 hover:text-purple-600">
-                About
-              </a>
-            </div>
-            <div className="flex items-center space-x-1">
-              <a href="#course" className="text-gray-700 hover:text-purple-600">
-                Course
-              </a>
-            </div>
-            <div className="flex items-center space-x-1">
-              <a href="#price" className="text-gray-700 hover:text-purple-600">
-                Price
-              </a>
-            </div>
-            <div className="flex items-center space-x-1">
-              <a href="#textbook" className="text-gray-700 hover:text-purple-600">
-                Textbook
-              </a>
-            </div>
-            <div className="flex items-center space-x-1">
-              <a href="#news" className="text-gray-700 hover:text-purple-600">
-                News
-              </a>
-            </div>
-            <div className="flex items-center space-x-1">
-              <a href="#contact" className="text-gray-700 hover:text-purple-600">
-                お問い合わせ
-              </a>
-            </div>
+            <a href="#about" className="text-gray-700 hover:text-purple-600">
+              About
+            </a>
+            <a href="#course" className="text-gray-700 hover:text-purple-600">
+              Course
+            </a>
+            <a href="#price" className="text-gray-700 hover:text-purple-600">
+              Price
+            </a>
+            <a href="#class" className="text-gray-700 hover:text-purple-600">
+              Class
+            </a>
+            <a href="#textbook" className="text-gray-700 hover:text-purple-600">
+              Textbook
+            </a>
+            <a href="#news" className="text-gray-700 hover:text-purple-600">
+              News
+            </a>
+            <a href="#contact" className="text-gray-700 hover:text-purple-600">
+              Contact
+            </a>
           </nav>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Visible Navigation Items */}
+            <nav className="flex space-x-2">
+              <a href="#about" className="text-gray-700 hover:text-purple-600 text-sm whitespace-nowrap">
+                About
+              </a>
+              <a href="#course" className="text-gray-700 hover:text-purple-600 text-sm whitespace-nowrap">
+                Course
+              </a>
+              <a href="#price" className="text-gray-700 hover:text-purple-600 text-sm whitespace-nowrap">
+                Price
+              </a>
+              <a href="#contact" className="text-gray-700 hover:text-purple-600 text-sm whitespace-nowrap">
+                Contact
+              </a>
+            </nav>
+            
+            {/* Hamburger Menu for Hidden Items */}
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="text-gray-700">
@@ -62,12 +70,6 @@ export function Header() {
                   <a href="#home" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
                     Home
                   </a>
-                  <a href="#about" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
-                    About
-                  </a>
-                  <a href="#course" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
-                    Course
-                  </a>
                   <a href="#class" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
                     Class
                   </a>
@@ -76,12 +78,6 @@ export function Header() {
                   </a>
                   <a href="#news" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
                     News
-                  </a>
-                  <a href="#price" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
-                    Price
-                  </a>
-                  <a href="#contact" className="text-gray-700 hover:text-purple-600 text-lg font-medium">
-                    お問い合わせ
                   </a>
                 </div>
               </SheetContent>
