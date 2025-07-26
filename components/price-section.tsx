@@ -121,14 +121,30 @@ const enrollmentPrograms = [
 function ClickableImage({ src, alt, title }: { src: string; alt: string; title: string }) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleDownload = (e: React.MouseEvent) => {
+  const handleDownload = async (e: React.MouseEvent) => {
     e.stopPropagation()
-    const link = document.createElement('a')
-    link.href = src
-    link.download = `${title}.jpg`
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    try {
+      const response = await fetch(src)
+      const blob = await response.blob()
+      const url = window.URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `${title}.jpg`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      window.URL.revokeObjectURL(url)
+    } catch (error) {
+      console.error('Download failed:', error)
+      // 如果fetch失败，使用备用方法
+      const link = document.createElement('a')
+      link.href = src
+      link.download = `${title}.jpg`
+      link.target = '_blank'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
   }
 
   return (

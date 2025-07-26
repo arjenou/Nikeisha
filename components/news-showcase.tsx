@@ -16,9 +16,7 @@ export function NewsShowcase() {
               alt="NKS 17th Anniversary News (Pink Banner)"
               width={800}
               height={500}
-              layout="responsive"
-              objectFit="contain"
-              className="rounded-lg"
+              className="w-full h-auto rounded-lg object-contain"
             />
           </div>
           <div className="relative w-full h-auto rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -27,9 +25,7 @@ export function NewsShowcase() {
               alt="NKS 17th Anniversary News (White Banner)"
               width={800}
               height={500}
-              layout="responsive"
-              objectFit="contain"
-              className="rounded-lg"
+              className="w-full h-auto rounded-lg object-contain"
             />
           </div>
         </div>
