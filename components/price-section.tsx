@@ -97,7 +97,7 @@ const enrollmentPrograms = [
     title: "日本大学院文科理科升学辅导",
     titleEn: "Japanese Graduate School Admission Guidance", 
     description: "针对研究生院申请的专业指导，助您进入理想的日本大学院",
-    pdfLink: "/pricePdf/大学院文理价格表_compressed.pdf",
+    pdfLink: "/pricePdf/大学院文理价格表.pdf",
     icon: Award,
     features: [
       "研究计划书指导",
