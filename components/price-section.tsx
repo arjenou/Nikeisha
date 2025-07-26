@@ -1,6 +1,10 @@
+"use client"
+
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { GraduationCap, FileText, Users, Award } from "lucide-react"
+import { GraduationCap, FileText, Users, Award, Download, Maximize2 } from "lucide-react"
+import Image from "next/image"
+import { useState } from "react"
 
 const oneOnOnePrices = [
   {
@@ -79,7 +83,7 @@ const enrollmentPrograms = [
     title: "日本学部文科理科升学辅导",
     titleEn: "Japanese Undergraduate Admission Guidance",
     description: "专业指导日本大学本科申请，涵盖文科理科全专业方向",
-    pdfLink: "/pricePdf/学部文理价格表.pdf",
+    imageUrl: "/pricePdf/daxue.jpg",
     icon: GraduationCap,
     features: [
       "个人定制升学方案",
@@ -97,7 +101,7 @@ const enrollmentPrograms = [
     title: "日本大学院文科理科升学辅导",
     titleEn: "Japanese Graduate School Admission Guidance", 
     description: "针对研究生院申请的专业指导，助您进入理想的日本大学院",
-    pdfLink: "/pricePdf/大学院文理价格表.pdf",
+    imageUrl: "/pricePdf/daxueyuan.jpg",
     icon: Award,
     features: [
       "研究计划书指导",
@@ -112,6 +116,79 @@ const enrollmentPrograms = [
     borderColor: "border-purple-200"
   }
 ]
+
+// 可点击放大的图片组件
+function ClickableImage({ src, alt, title }: { src: string; alt: string; title: string }) {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleDownload = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    const link = document.createElement('a')
+    link.href = src
+    link.download = `${title}.jpg`
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
+  return (
+    <>
+      <div className="relative group cursor-pointer" onClick={() => setIsOpen(true)}>
+        <Image
+          src={src}
+          alt={alt}
+          width={400}
+          height={300}
+          className="w-full h-auto rounded-lg shadow-md object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-lg flex items-center justify-center">
+          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex space-x-2">
+            <div className="bg-white rounded-full p-2 shadow-lg">
+              <Maximize2 className="h-5 w-5 text-gray-700" />
+            </div>
+            <div 
+              className="bg-white rounded-full p-2 shadow-lg"
+              onClick={handleDownload}
+            >
+              <Download className="h-5 w-5 text-gray-700" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 放大显示的模态框 */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          onClick={() => setIsOpen(false)}
+        >
+          <div className="relative max-w-4xl max-h-[90vh] w-full">
+            <Image
+              src={src}
+              alt={alt}
+              width={800}
+              height={600}
+              className="w-full h-auto rounded-lg shadow-2xl object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              onClick={handleDownload}
+              className="absolute top-4 right-4 bg-white text-gray-700 rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors duration-200"
+            >
+              <Download className="h-6 w-6" />
+            </button>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 left-4 bg-white text-gray-700 rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors duration-200"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
 
 export function PriceSection() {
   return (
@@ -447,15 +524,14 @@ export function PriceSection() {
                     </ul>
                   </div>
 
-                  <div className="flex gap-3">
-                    <a 
-                      href={program.pdfLink}
-                      download
-                      className="flex-1 bg-purple-600 text-white px-4 py-3 rounded-lg hover:bg-purple-700 transition-colors duration-200 flex items-center justify-center font-medium"
-                    >
-                      <FileText className="h-4 w-4 mr-2" />
-                      价格表下载
-                    </a>
+                  <div className="flex justify-center">
+                    <div className="w-full max-w-md">
+                      <ClickableImage
+                        src={program.imageUrl}
+                        alt={`${program.title}价格表`}
+                        title={program.title}
+                      />
+                    </div>
                   </div>
                 </CardContent>
               </Card>
