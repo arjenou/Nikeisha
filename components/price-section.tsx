@@ -383,12 +383,12 @@ export function PriceSection() {
         </div>
 
         {/* Japanese Teaching Section */}
-        <div className="text-center mb-8">
+        {/* <div className="text-center mb-8">
           <h3 className="text-2xl font-bold text-gray-800">日语教学</h3>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Study Abroad Japanese Course Table */}
-          <Card className="bg-white shadow-xl border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+          {/* <Card className="bg-white shadow-xl border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
             <CardHeader className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-4 md:py-6">
               <CardTitle className="text-center text-sm md:text-lg font-bold">
                 <span role="img" aria-label="airplane emoji" className="mr-2 md:mr-3 text-lg md:text-2xl">
@@ -445,10 +445,10 @@ export function PriceSection() {
                 </Table>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
 
           {/* Exam Preparation Guidance Course Table */}
-          <Card className="bg-white shadow-xl border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+          {/* <Card className="bg-white shadow-xl border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
             <CardHeader className="bg-gradient-to-r from-green-500 to-teal-500 text-white py-4 md:py-6">
               <CardTitle className="text-center text-sm md:text-lg font-bold">
                 <span role="img" aria-label="book emoji" className="mr-2 md:mr-3 text-lg md:text-2xl">
@@ -500,11 +500,11 @@ export function PriceSection() {
                 </Table>
               </div>
             </CardContent>
-          </Card>
-        </div>
+          </Card> */}
+        {/* </div> */}
 
         {/* Japanese Enrollment Guidance Section */}
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <div className="text-center mb-16">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">日本升学专业辅导</h3>
           </div>
@@ -553,7 +553,7 @@ export function PriceSection() {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

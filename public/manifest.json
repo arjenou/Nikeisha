@@ -1,0 +1,24 @@
+{
+  "name": "二継社 NKS - 専門的な語学教育",
+  "short_name": "二継社 NKS",
+  "description": "17年の実績を持つ専門的な語学教育機関。中国語、日本語、英語のオンライン授業と留学サポートを提供。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/images/nsk.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/nsk.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "ja",
+  "orientation": "portrait-primary"
+}

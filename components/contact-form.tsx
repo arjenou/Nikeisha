@@ -8,14 +8,24 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { sendContactEmail } from "@/app/actions/send-contact-email"
 import { courseCategories } from "./popular-topics" // Import course data
+import { trackEvent } from "@/components/seo/google-analytics"
 
 export function ContactForm() {
   const [state, formAction, isPending] = useActionState(sendContactEmail, null)
   const [selectedCourseCategoryTitle, setSelectedCourseCategoryTitle] = useState<string | undefined>(undefined) // State for selected main course
 
+  // Filter out Japanese course for contact form
+  const contactFormCourseCategories = courseCategories.filter(category => category.titleEn !== "Japanese Course")
+
   // Find the selected course category to get its sub-courses
-  const selectedCategory = courseCategories.find((category) => category.title === selectedCourseCategoryTitle)
+  const selectedCategory = contactFormCourseCategories.find((category) => category.title === selectedCourseCategoryTitle)
   const subCourses = selectedCategory ? selectedCategory.courses : []
+
+  // Handle course selection tracking
+  const handleCourseSelection = (value: string) => {
+    setSelectedCourseCategoryTitle(value)
+    trackEvent('course_select', 'contact_form', value)
+  }
 
   return (
     <section id="contact" className="py-16 bg-gray-50">
@@ -47,13 +57,13 @@ export function ContactForm() {
               <Select
                 name="course"
                 disabled={isPending}
-                onValueChange={(value) => setSelectedCourseCategoryTitle(value)} // Update state on change
+                onValueChange={handleCourseSelection} // Update state on change
               >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="コースを選択してください" />
                 </SelectTrigger>
                 <SelectContent>
-                  {courseCategories.map((category) => (
+                  {contactFormCourseCategories.map((category) => (
                     <SelectItem key={category.titleEn} value={category.title}>
                       {category.title}
                     </SelectItem>

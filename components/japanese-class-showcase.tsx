@@ -85,8 +85,8 @@ export function JapaneseClassShowcase() {
     <section id="japanese-class" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">日本升学课程上课一览</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">专业的日本升学指导，个性化的学习方案，全方位的学术支持</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">中国留学コース授業一覧</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">専門的な中国進学指導、個別化された学習プラン、充実した学術サポート</p>
         </div>
 
         <div className="relative overflow-hidden">

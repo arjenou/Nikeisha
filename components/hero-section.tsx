@@ -3,16 +3,18 @@ import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="bg-gradient-to-br from-purple-50 to-blue-50 py-24 md:py-32 lg:py-64 opacity-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative bg-gradient-to-br from-purple-600 to-blue-600 text-white py-20 lg:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-black opacity-10"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">二継社</h1>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">自信开启中文之旅</h2>
-            <h3 className="text-xl text-gray-700 mb-6">自信を持って中国語を学ぼう</h3>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              2008年上海設立、日本人専門教育を大学的内容にて各高度中国語教育、
-              中日語業務対、経営スタイル自由的時、入会金なし、いつでもスタート可能！
+          <div className="text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              専門的な<br />
+              <span className="text-yellow-300">語学教育</span>で<br />
+              未来を切り開く
+            </h1>
+            <p className="text-xl sm:text-2xl mb-8 text-purple-100 leading-relaxed">
+              17年の実績を持つ二継社（NKS）で、あなたの語学学習を次のレベルへ
             </p>
             <Button asChild className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3">
               <a href="#contact">お問い合わせ →</a>
