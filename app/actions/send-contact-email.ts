@@ -124,6 +124,13 @@ export async function sendContactEmail(prevState: any, formData: FormData) {
             通常、1-2営業日以内にご返信いたします。
           </p>
           
+          <p style="color: #374151; line-height: 1.6;">
+            お急ぎの場合は、お電話でもお問い合わせいただけます：<br>
+            <a href="tel:0366272521" style="color: #9333ea; text-decoration: none; font-weight: bold; font-size: 18px;">
+              📞 03-6627-2521
+            </a>
+          </p>
+          
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
             <p>二継社</p>
             <p>この自動配信メールに返信しないでください。</p>
