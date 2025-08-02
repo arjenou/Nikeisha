@@ -80,6 +80,12 @@ export function ContactForm() {
           <p className="text-gray-600 max-w-2xl mx-auto mt-4">
             ご質問やご要望がございましたら、以下のフォームにご記入ください。
           </p>
+          <p className="text-gray-600 max-w-2xl mx-auto mt-2">
+            お急ぎの場合は、お電話でもお問い合わせいただけます：
+            <a href="tel:0366272521" className="text-purple-600 font-semibold hover:text-purple-700 ml-2">
+              📞 03-6627-2521
+            </a>
+          </p>
         </div>
 
         <div className="bg-white p-8 rounded-lg shadow-lg">
