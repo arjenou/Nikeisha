@@ -10,7 +10,7 @@ export function Footer() {
             <div className="flex items-center mb-4">
               <span className="text-xl font-bold">株式会社二継社</span>
             </div>
-            <p className="text-gray-400 leading-relaxed">東京都葛飾区東新小岩2-28-1-2階22号室</p>
+            <p className="text-gray-400 leading-relaxed">东京都練馬区豊玉北5丁目23番11号302室</p>
           </div>
 
           {/* Key Points - Spread out in columns */}
