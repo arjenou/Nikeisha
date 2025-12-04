@@ -8,35 +8,35 @@ import { useState } from "react"
 
 const oneOnOnePrices = [
   {
-    lessons: "20",
+    lessons: "10",
     standardBeginnerIntermediate: "3375円",
     standardAdvanced: "3575円",
     weekdayBeginnerIntermediate: "3175円",
     weekdayAdvanced: "3375円",
   },
   {
-    lessons: "40",
+    lessons: "20",
     standardBeginnerIntermediate: "3275円",
     standardAdvanced: "3475円",
     weekdayBeginnerIntermediate: "3075円",
     weekdayAdvanced: "3275円",
   },
   {
-    lessons: "60",
+    lessons: "40",
     standardBeginnerIntermediate: "3175円",
     standardAdvanced: "3375円",
     weekdayBeginnerIntermediate: "2975円",
     weekdayAdvanced: "3175円",
   },
   {
-    lessons: "80",
+    lessons: "60",
     standardBeginnerIntermediate: "3075円",
     standardAdvanced: "3275円",
     weekdayBeginnerIntermediate: "2875円",
     weekdayAdvanced: "3075円",
   },
   {
-    lessons: "120",
+    lessons: "80",
     standardBeginnerIntermediate: "2968円",
     standardAdvanced: "3168円",
     weekdayBeginnerIntermediate: "2768円",
@@ -46,14 +46,14 @@ const oneOnOnePrices = [
 
 const groupPrices = [
   {
-    lessons: "40",
+    lessons: "20",
     standardBeginnerIntermediate: "2768円",
     standardAdvanced: "2868円",
     weekdayBeginnerIntermediate: "2668円",
     weekdayAdvanced: "2768円",
   },
   {
-    lessons: "80",
+    lessons: "40",
     standardBeginnerIntermediate: "2568円",
     standardAdvanced: "2668円",
     weekdayBeginnerIntermediate: "2468円",
@@ -242,6 +242,7 @@ export function PriceSection() {
                         rowSpan={2}
                         className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-purple-700 w-[80px] md:w-[120px] align-bottom border-r border-purple-200"
                       >
+                        <div className="text-xs text-purple-600 font-semibold mb-1">月謝</div>
                         <div>コマ数</div>
                         <div className="text-xs text-purple-500 font-normal">* 45分</div>
                       </TableHead>
@@ -321,6 +322,7 @@ export function PriceSection() {
                         rowSpan={2}
                         className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-blue-700 w-[80px] md:w-[120px] align-bottom border-r border-blue-200"
                       >
+                        <div className="text-xs text-blue-600 font-semibold mb-1">月謝</div>
                         <div>コマ数</div>
                         <div className="text-xs text-blue-500 font-normal">* 45分</div>
                       </TableHead>

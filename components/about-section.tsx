@@ -28,6 +28,9 @@ export function AboutSection() {
             <p className="text-gray-600 mb-8 leading-relaxed">
               二継社は2008年に上海で設立され、日本人向け中国語教育の専門機関として、長年にわたり実績と信頼を積み重ねてまいりました。専門的な教育課程に特化し、大学申請や中国企業での実務経験したオリジナル教材を導入して、初心者から上級者まで幅広く対応しております。全ての授業はリスニング教材について充実した内容、多様な形式によるコース選択肢で、そして専門・オンライン・通学部の派遣など多様な学習方法で1対1の学習、日本で中国語の学習環境であります。
             </p>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              上海にお越しいただければ、二継社の上海キャンパスでの学習も可能です。また、当社の会員様を対象に、毎年北京、上海、蘇州、杭州、西安など中国の様々な都市への研修旅行を実施しており、文化交流や実践的な学習の機会をご提供しております。
+            </p>
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-5 w-5 text-purple-600" />
