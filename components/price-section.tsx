@@ -60,14 +60,14 @@ const groupPrices = [
     weekdayAdvanced: "2960円",
   },
   {
-    lessons: "20",
+    lessons: "10",
     standardBeginnerIntermediate: "2768円",
     standardAdvanced: "2868円",
     weekdayBeginnerIntermediate: "2668円",
     weekdayAdvanced: "2768円",
   },
   {
-    lessons: "40",
+    lessons: "20",
     standardBeginnerIntermediate: "2568円",
     standardAdvanced: "2668円",
     weekdayBeginnerIntermediate: "2468円",
