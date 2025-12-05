@@ -8,6 +8,13 @@ import { useState } from "react"
 
 const oneOnOnePrices = [
   {
+    lessons: "月謝",
+    standardBeginnerIntermediate: "3980円",
+    standardAdvanced: "4196円",
+    weekdayBeginnerIntermediate: "3860円",
+    weekdayAdvanced: "3980円",
+  },
+  {
     lessons: "10",
     standardBeginnerIntermediate: "3375円",
     standardAdvanced: "3575円",
@@ -45,6 +52,13 @@ const oneOnOnePrices = [
 ]
 
 const groupPrices = [
+  {
+    lessons: "月謝",
+    standardBeginnerIntermediate: "2980円",
+    standardAdvanced: "3186円",
+    weekdayBeginnerIntermediate: "2860円",
+    weekdayAdvanced: "2960円",
+  },
   {
     lessons: "20",
     standardBeginnerIntermediate: "2768円",
@@ -239,12 +253,10 @@ export function PriceSection() {
                   <TableHeader className="bg-gradient-to-r from-purple-50 to-pink-50">
                     <TableRow className="border-none">
                       <TableHead
-                        rowSpan={2}
-                        className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-purple-700 w-[80px] md:w-[120px] align-bottom border-r border-purple-200"
+                        colSpan={1}
+                        className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-purple-700 border-r border-purple-200"
                       >
-                        <div className="text-xs text-purple-600 font-semibold mb-1">月謝</div>
-                        <div>コマ数</div>
-                        <div className="text-xs text-purple-500 font-normal">* 45分</div>
+                        月謝
                       </TableHead>
                       <TableHead
                         colSpan={2}
@@ -260,6 +272,9 @@ export function PriceSection() {
                       </TableHead>
                     </TableRow>
                     <TableRow className="border-none">
+                      <TableHead className="px-2 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-purple-600 border-r border-purple-200">
+                        コマ数<br/><span className="text-purple-500 text-xs font-normal">* 45分</span>
+                      </TableHead>
                       <TableHead className="px-1 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-purple-600 border-r border-purple-200">
                         初中级
                       </TableHead>
@@ -319,12 +334,10 @@ export function PriceSection() {
                   <TableHeader className="bg-gradient-to-r from-blue-50 to-cyan-50">
                     <TableRow className="border-none">
                       <TableHead
-                        rowSpan={2}
-                        className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-blue-700 w-[80px] md:w-[120px] align-bottom border-r border-blue-200"
+                        colSpan={1}
+                        className="px-2 md:px-6 py-2 md:py-4 text-center text-xs md:text-sm font-bold text-blue-700 border-r border-blue-200"
                       >
-                        <div className="text-xs text-blue-600 font-semibold mb-1">月謝</div>
-                        <div>コマ数</div>
-                        <div className="text-xs text-blue-500 font-normal">* 45分</div>
+                        月謝
                       </TableHead>
                       <TableHead
                         colSpan={2}
@@ -340,6 +353,9 @@ export function PriceSection() {
                       </TableHead>
                     </TableRow>
                     <TableRow className="border-none">
+                      <TableHead className="px-2 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-blue-600 border-r border-blue-200">
+                        コマ数<br/><span className="text-blue-500 text-xs font-normal">* 45分</span>
+                      </TableHead>
                       <TableHead className="px-1 md:px-6 py-1 md:py-3 text-center text-xs font-semibold text-blue-600 border-r border-blue-200">
                         初中级
                       </TableHead>
