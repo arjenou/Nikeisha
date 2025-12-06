@@ -26,7 +26,7 @@ export function Footer() {
               <h3 className="text-lg font-semibold mb-3">サービス</h3>
               <ul className="text-gray-400 space-y-2">
                 <li>プロ教師陣</li>
-                <li>入会金・月謝なし</li>
+                <li>入会金し</li>
               </ul>
             </div>
           </div>
